@@ -26,3 +26,12 @@ As the economy grapples with uncertainties, notably evident from the Economic Un
 - **Economic Indicators and their Impact on the Tech World**: A deep dive into how broad economic metrics directly and indirectly influence tech startups and established companies.
 - **The Resilience of the Tech Industry in Economic Downturns**: Historical analysis of the tech industry's performance during past recessions.
 - **Venture Capital and its Role in Tech Stability**: Understanding how investments play a role in both the boom and bust of tech startups.
+
+## How to run DEMO and see the results:
+
+```
+cd src
+```
+```
+streamlit run streamlit.py
+```
