@@ -30,17 +30,19 @@ As the economy grapples with uncertainties, notably evident from the Economic Un
 ## How to run DEMO and see the results:
 
 
-python3 -m venv myvenv # make a virtual environment
-source myvenv/bin/activate # activate the virtual environment
-pip install --upgrade pip # update pip
-pip install streamlit # install Streamlit
-pip install pandas # install Pandas
-pip install numpy # install Numpy
-pip install seaborn # install Seaborn
-pip install matplotlib # install Matplotlib
-pip install statsmodels # install Statmodels
 
 ```
 cd src
+
+python3 -m venv myvenv
+source myvenv/bin/activate
+pip install --upgrade pip
+pip install streamlit
+pip install pandas
+pip install numpy
+pip install seaborn
+pip install matplotlib
+pip install statsmodels
+
+streamlit run streamlit.py
 ```
-streamlit run streamlit.py # run the dashboard
