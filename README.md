@@ -27,22 +27,18 @@ As the economy grapples with uncertainties, notably evident from the Economic Un
 - **The Resilience of the Tech Industry in Economic Downturns**: Historical analysis of the tech industry's performance during past recessions.
 - **Venture Capital and its Role in Tech Stability**: Understanding how investments play a role in both the boom and bust of tech startups.
 
-## How to run DEMO and see the results:
+## How to run DEMO:
 
 
+#### To run the `tugi-artifact` app, first pull the image from Docker Hub:
 
+```bash
+docker pull tuduun/tugi-artifact:python3-10
 ```
-cd src
 
-python3 -m venv myvenv
-source myvenv/bin/activate
-pip install --upgrade pip
-pip install streamlit
-pip install pandas
-pip install numpy
-pip install seaborn
-pip install matplotlib
-pip install statsmodels
+#### After pulling the image, run the application by executing the following command:
 
-streamlit run streamlit.py
+```bash
+docker run -p 8501:8501 tuduun/tugi-artifact:3-10
 ```
+### The application will be accessible at `http://localhost:8501` on your web browser.
