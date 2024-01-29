@@ -39,6 +39,6 @@ docker pull tuduun/tugi-artifact:python3-10
 #### After pulling the image, run the application by executing the following command:
 
 ```bash
-docker run -p 5000:8501 tuduun/tugi-artifact:3-10
+docker run -p 5000:8501 tuduun/tugi-artifact:python3-10
 ```
 ### The application will be accessible at `http://localhost:8501` on your web browser.
