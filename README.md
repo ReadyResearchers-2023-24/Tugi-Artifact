@@ -41,4 +41,4 @@ docker pull tuduun/tugi-artifact:python3-10
 ```bash
 docker run -p 5000:8501 tuduun/tugi-artifact:python3-10
 ```
-### The application will be accessible at `http://localhost:8501` on your web browser.
+### The application will be accessible at `http://localhost:5000` on your web browser.
