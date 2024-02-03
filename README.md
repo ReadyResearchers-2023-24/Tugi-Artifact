@@ -33,12 +33,12 @@ As the economy grapples with uncertainties, notably evident from the Economic Un
 #### To run the `tugi-artifact` app, first pull the image from Docker Hub:
 
 ```bash
-docker pull tuduun/tugi-artifact:python3-10
+docker pull tuduun/tugi-artifact:v1.0.1
 ```
 
 #### After pulling the image, run the application by executing the following command:
 
 ```bash
-docker run -p 5000:8501 tuduun/tugi-artifact:python3-10
+docker run -p 8501:8501 tuduun/tugi-artifact:v1.0.1
 ```
-### The application will be accessible at `http://localhost:5000` on your web browser.
+### The application will be accessible at `http://localhost:8501` on your web browser.

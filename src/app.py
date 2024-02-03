@@ -5,33 +5,27 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import statsmodels.api as sm
 
-# Load the data
 def load_data():
     return pd.read_csv('./data/filtered_US_data.csv')
 
 data = load_data()
 
-# Create a squared column for '$ Raised (mm)'
 data['$ Raised (mm)^2'] = data['$ Raised (mm)']**2
 
-# Create difference columns for 'USEPUINDXD' and 'DFF' (if they exist in the dataset)
 if 'USEPUINDXD' in data.columns:
     data['USEPUINDXD_diff'] = data['USEPUINDXD'].diff().fillna(0)
 if 'DFF' in data.columns:
     data['DFF_diff'] = data['DFF'].diff().fillna(0)
 
-# Enhanced sidebar
 st.sidebar.title("Tech Layoff Analysis")
 st.sidebar.markdown("Navigate through various sections of the analysis.")
 st.sidebar.empty()  # Add some space
 
-# Sidebar for navigation with emojis for better visual appeal
 st.sidebar.markdown("## 📌 Navigation")
 page = st.sidebar.radio("", ["📊 Regression Analysis", "📋 Data Table", "📈 Scatter Plots"])
 
 
 if page == "📊 Regression Analysis":
-    # Define predictors and target
     predictors = ['$ Raised (mm)', '$ Raised (mm)^2'] + [col for col in data.columns if 'Stage_' in col or 'Industry_' in col]
     if 'USEPUINDXD_diff' in data.columns:
         predictors.append('USEPUINDXD_diff')
@@ -39,39 +33,36 @@ if page == "📊 Regression Analysis":
         predictors.append('DFF_diff')
 
     X = data[predictors]
-    X = X.fillna(X.mean())  # Handle NaN values
+    X = X.fillna(X.mean())  
     y = data['# Laid Off'].fillna(data['# Laid Off'].mean())
-    X = X.replace([np.inf, -np.inf], 1e9)  # Handle infinite values
-    X = sm.add_constant(X)  # Add constant for intercept
-
+    X = X.replace([np.inf, -np.inf], 1e9)  
+    X = sm.add_constant(X)  
     # Fit the regression model
     model = sm.OLS(y, X).fit()
 
-    # Extract the p-values for predictors from the regression results
     p_values = model.pvalues
 
     p_values = model.pvalues
 
-    # Create tables for significant predictors
+
     significant_predictors = p_values[p_values < 0.05].reset_index()
     significant_predictors.columns = ['Predictor', 'P-Value']
 
-    # Display tables for significant predictors
+
     st.subheader("Significant Predictors (p < 0.05):")
     st.table(significant_predictors)
-    # Create tables for significant and non-significant predictors
+
     non_significant_predictors = p_values[p_values > 0.05].reset_index()
     non_significant_predictors.columns = ['Predictor', 'P-Value']
 
-    # Display the results
+
     st.title("Linear Regression Analysis")
 
-    # R squared values
+
     st.subheader("R-squared values:")
     st.write(f"R-squared: {model.rsquared}")
     st.write(f"Adjusted R-squared: {model.rsquared_adj}")
 
-    # Display tables for significant and non-significant predictors
     st.subheader("Significant Predictors (p < 0.05):")
     st.table(significant_predictors)
 
@@ -84,7 +75,7 @@ elif page == "📋 Data Table":
 elif page == "📈 Scatter Plots":
     st.title("Scatter Plots")
 
-    # Scatter plot for # Laid Off vs. $ Raised (mm)^2
+
     st.subheader("Scatter plot for # Laid Off vs. $ Raised (mm)^2")
     st.markdown("""
     This scatter plot illustrates the relationship between the squared amount of money raised by tech companies and the number of layoffs.
@@ -95,7 +86,6 @@ elif page == "📈 Scatter Plots":
     sns.scatterplot(x='$ Raised (mm)^2', y='# Laid Off', data=data, ax=ax1)
     st.pyplot(fig1)
 
-    # Scatter plot for # Laid Off vs. Stage_IPO
     if 'Stage_IPO' in data.columns:
         st.subheader("# Laid Off vs. Stage_IPO")
         st.markdown("""
@@ -106,7 +96,7 @@ elif page == "📈 Scatter Plots":
         sns.scatterplot(x='Stage_IPO', y='# Laid Off', data=data, ax=ax2)
         st.pyplot(fig2)
 
-    # Scatter plot for # Laid Off vs. Industry_Retail
+
     if 'Industry_Retail' in data.columns:
         st.subheader("# Laid Off vs. Industry_Retail")
         st.markdown("""
