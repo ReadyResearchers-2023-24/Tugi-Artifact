@@ -22,7 +22,7 @@ st.sidebar.markdown("Navigate through various sections of the analysis.")
 st.sidebar.empty()  # Add some space
 
 st.sidebar.markdown("## 📌 Navigation")
-page = st.sidebar.radio("", ["📊 Regression Analysis", "📋 Data Table", "📈 Scatter Plots"])
+page = st.sidebar.radio("", ["📊 Multi-linear Regression","📊 Regression Analysis", "📋 Data Table", "📈 Scatter Plots"])
 
 
 if page == "📊 Regression Analysis":
@@ -69,6 +69,10 @@ if page == "📊 Regression Analysis":
     st.subheader("Non-Significant Predictors (p >= 0.05):")
     st.table(non_significant_predictors)
 
+
+elif page == "📊 Multi-linear Regression":
+    st.title("Multu-Linear Regression Analysis")
+    
 elif page == "📋 Data Table":
     st.title("Data Table")
     st.dataframe(data)
