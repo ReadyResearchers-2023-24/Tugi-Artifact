@@ -16,6 +16,7 @@ pandas = "*"
 numpy = "*"
 matplotlib = "*"
 statsmodels = "*"
+ruff = "*"
 
 
 
@@ -24,6 +25,8 @@ statsmodels = "*"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.1.1"
 coverage = "^7.4.4"
+ruff = "*"
+
 
 
 [tool.pytest.ini_options]
