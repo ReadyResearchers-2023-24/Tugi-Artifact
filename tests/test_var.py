@@ -11,7 +11,7 @@ import sys
 def test_load_data():
     """Test loading data from a CSV file."""
     # Use the actual path to your test CSV file.
-    df = var.load_data("../test_data/test_var.csv")  
+    df = var.load_data("./test_data/test_var.csv")  
     expected_columns = ["observation_date","FEDFUNDS","CORESTICKM159SFRBATL","INDPRO","LAYOFFS","UNCERTAINTY"]  # Adjust based on your CSV structure.
     assert isinstance(df, pd.DataFrame)
     assert list(df.columns) == expected_columns
