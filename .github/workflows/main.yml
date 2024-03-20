@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.8, 3.9, 3.10]
+        python-version: [3.9, 3.10]  # Updated to test only Python 3.9 and above
 
     steps:
     - uses: actions/checkout@v2
@@ -38,5 +38,3 @@ jobs:
       run: |
         poetry run coverage run -m pytest
         poetry run coverage report -m --fail-under=80
-
-
