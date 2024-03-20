@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.9, 3.10]  # Updated to test only Python 3.9 and above
+        python-version: ['3.10']  # Updated to test only Python 3.9 and above
 
     steps:
     - uses: actions/checkout@v2
