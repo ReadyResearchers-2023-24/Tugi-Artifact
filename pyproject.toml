@@ -1,11 +1,12 @@
 [tool.poetry]
 name = "2023-layoff-description"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
 authors = ["tuduun <gantulga01@allegheny.edu>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+PyQt5 = "5.15.2"
 streamlit = "*"
 pandas = "*"
 numpy = "*"

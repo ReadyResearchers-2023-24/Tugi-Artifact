@@ -93,7 +93,6 @@ def display_var_model_results(fitted_model, results_df):
         # Adjust access to actuals and residuals
         actuals = fitted_model.endog[12:, i] if isinstance(fitted_model.endog, np.ndarray) else fitted_model.endog.iloc[12:, i].to_numpy()
         resid = fitted_model.resid[:, i] if isinstance(fitted_model.resid, np.ndarray) else fitted_model.resid.iloc[:, i].to_numpy()
-        predictions = actuals - resid
         ss_res = np.sum(resid**2)
         ss_tot = np.sum((actuals - np.mean(actuals))**2)
         r_squared = 1 - ss_res / ss_tot
