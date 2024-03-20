@@ -4,24 +4,53 @@ import numpy as np
 import statsmodels.api as sm
 import streamlit as st
 import pandas as pd
+from typing import Tuple
 
-def plot_irfs(irf, independent_var):
+
+
+def plot_irfs(irf, independent_var: str) -> None:
+    """
+    Plots impulse response functions (IRFs) showing the response of LAYOFFS to a shock in the specified independent variable.
+
+    Parameters:
+    - irf (VARResults): The fitted VAR model results containing the IRF method.
+    - independent_var (str): The independent variable name for which the IRF is plotted.
+
+    Returns:
+    None. The function directly renders the plot in a Streamlit application.
+    """
     fig = irf.plot(impulse=independent_var, response='LAYOFFS', orth=True, subplot_params={'title': f'Response of LAYOFFS to a shock in {independent_var}'})
     st.pyplot(fig)
 
-def display_data_tables(data, var_data):
+def display_data_tables(data: pd.DataFrame, var_data: pd.DataFrame) -> None:
+    """
+    Displays data tables for layoffs and VAR macrovariables using Streamlit.
+
+    Parameters:
+    - data (pd.DataFrame): The DataFrame containing layoffs data.
+    - var_data (pd.DataFrame): The DataFrame containing VAR macrovariables data.
+
+    Renders two data tables and titles in a Streamlit app.
+    """
     st.title("Layoffs.fyi Company Table:")
     st.dataframe(data)
     st.title("VAR macrovariables used for regression (Dec 2000 to Dec 2023):")
     st.dataframe(var_data)
 
 
-def perform_regression_analysis(data):
+def perform_regression_analysis(data: pd.DataFrame) -> None:
+    """
+    Performs regression analysis on the provided data, identifying significant and 
+    non-significant predictors for the number of layoffs.
+
+    Parameters:
+    - data (pd.DataFrame): The input DataFrame containing the data for analysis.
+
+    The function displays the results of the regression analysis, including significant
+    predictors and R-squared values, using Streamlit.
+    """
     predictors = ['$ Raised (mm)', '$ Raised (mm)^2'] + [col for col in data.columns if 'Stage_' in col or 'Industry_' in col]
     # Add other predictors if present
-    for col in ['USEPUINDXD_diff', 'DFF_diff']:
-        if col in data.columns:
-            predictors.append(col)
 
     X = data[predictors].fillna(data[predictors].mean()).replace([np.inf, -np.inf], 1e9)
     y = data['# Laid Off'].fillna(data['# Laid Off'].mean())
@@ -57,7 +86,14 @@ def perform_regression_analysis(data):
     st.table(non_significant_predictors)
 
 
-def print_adf_result(variable, result):
+def print_adf_result(variable: str, result: Tuple) -> None:
+    """
+    Prints the Augmented Dickey-Fuller test result for a given variable using Streamlit.
+
+    Parameters:
+    - variable (str): The name of the variable tested.
+    - result (Tuple): The result tuple from the ADF test, where result[1] is the p-value.
+    """
     if variable == "CORESTICKM159SFRBATL":
         st.subheader(f'Augmented Dickey-Fuller Test on "{variable}" aka "INFLATION":')
     else:
