@@ -1,5 +1,5 @@
 # Use an official lightweight Python image.
-FROM python:3.10-slim
+FROM python:3.11-slim
 
 # Set the working directory in the Docker container to /app
 WORKDIR /app
@@ -13,7 +13,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends gcc libpq-dev &
 
 # Install Poetry, configure it to not create a virtual environment
 # and install the project dependencies
-RUN pip install --upgrade pip poetry && \
+RUN pip install --upgrade pip && \
+    pip install poetry && \
     poetry config virtualenvs.create false && \
     poetry install --no-dev --no-interaction --no-ansi
 
