@@ -10,7 +10,8 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
-PyQt5 = "5.15.10"
+pyqt5 = "=5.15.10"   
+pyqt5-qt5 = "=5.15.2"
 streamlit = "*"
 pandas = "*"
 numpy = "*"
