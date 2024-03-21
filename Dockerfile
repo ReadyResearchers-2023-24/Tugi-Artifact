@@ -13,10 +13,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends gcc libpq-dev &
 
 # Install Poetry, configure it to not create a virtual environment
 # and install the project dependencies
-RUN pip install --upgrade pip && \
-    pip install poetry && \
-    poetry config virtualenvs.create false && \
-    poetry install --no-dev --no-interaction --no-ansi
+RUN pip install --upgrade pip
+RUN pip install poetry
+RUN poetry config virtualenvs.create false
+RUN poetry install --only main --no-interaction --no-ansi
+
 
 # Copy the rest of your app's source code from your host to your image filesystem.
 # Assuming your source code is in the src/ directory in your project
