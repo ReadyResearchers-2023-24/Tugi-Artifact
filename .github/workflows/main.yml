@@ -1,4 +1,4 @@
-name: Python CI
+name: Macro Vector Auto Regression App (CI/CD)
 
 on:
   push:
