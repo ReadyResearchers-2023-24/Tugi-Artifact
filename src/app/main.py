@@ -8,14 +8,13 @@ from var import load_data, prepare_raw_data, difference_variables, fit_var_model
 # This function must be here because it contains the IRF
 
 def main():
-        
     # Load the dataset for Linear-Regression
-    data = load_data('../data/filtered_US_data.csv')
+    data = load_data('src/data/filtered_US_data.csv')
     data['$ Raised (mm)^2'] = data['$ Raised (mm)']**2
 
     # Load the dataset for VAR
 
-    var_data = prepare_raw_data(load_data('../data/macro_seasonal_variables_data.csv'))
+    var_data = prepare_raw_data(load_data('src/data/macro_seasonal_variables_data.csv'))
     data_df = difference_variables(var_data)
     fitted_model, results_df = fit_var_model_and_select_lags(data_df,12)
     irf = fitted_model.irf(periods=20)
