@@ -51,5 +51,5 @@ jobs:
     
     - name: Build and push Docker image
       run: |
-        docker build -t ghcr.io/${{ github.repository }}/Tugi-Macro-Layoffs:latest .
-        docker push ghcr.io/${{ github.repository }}/Tugi-Macro-Layoffs:latest
+        docker build -t ghcr.io/allegheny-senior-thesis-2024/tugi-macro-layoffs:latest .
+        docker push ghcr.io/allegheny-senior-thesis-2024/tugi-macro-layoffs:latest
