@@ -2,6 +2,18 @@
 
 An in-depth analysis of the dynamics of tech layoffs in light of economic indicators/indicators.
 
+
+Tuguldur Gantulga_
+Timothy P. Bianco, PhD_
+Gregory Kapfhammer, PhD_
+
+Fall 2023 - Spring 2024
+
+The Business and Economics Department_
+Department of Computer and Information Science_
+Allegheny College, Meadville, PA 16335_
+
+
 ## Introduction and Motivation
 
 As the economy grapples with uncertainties, notably evident from the Economic Uncertainty Index and fluctuating federal funds rates, it's crucial to understand the underlying factors affecting tech layoffs. Through meticulous data analysis using Python, this project aims to unravel the correlations and potential causative factors. Harnessing the power of Streamlit, a web-based visualization tool, we aim to provide interactive insights that elucidate the patterns and trends in tech layoffs, offering stakeholders meaningful data to make informed decisions.
