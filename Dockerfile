@@ -21,10 +21,10 @@ RUN poetry install --only main --no-interaction --no-ansi
 
 # Copy the rest of your app's source code from your host to your image filesystem.
 # Assuming your source code is in the src/ directory in your project
-COPY src/ ./src
+COPY . /app
 
 # Change the working directory to /app/src where your app.py and other source files are
-WORKDIR /app/src
+WORKDIR /app
 
 # Expose the port your app runs on
 EXPOSE 8501
