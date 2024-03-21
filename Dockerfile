@@ -30,4 +30,4 @@ WORKDIR /app/src
 EXPOSE 8501
 
 # Define the command to run your app using Poetry
-CMD ["poetry", "run", "streamlit", "run", "main.py"]
+CMD ["poetry", "run", "streamlit", "run", "src/app/main.py"]
