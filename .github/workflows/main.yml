@@ -44,4 +44,12 @@ jobs:
     - name: Check code coverage
       run: |
         poetry run coverage run -m pytest
-        poetry run coverage report -m --fail-under=80
+        poetry run coverage report -m --fail-under=90
+    
+    - name: Log in to GitHub Container Registry
+      run: echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+    
+    - name: Build and push Docker image
+      run: |
+        docker build -t ghcr.io/${{ github.repository }}/Tugi-Macro-Layoffs:latest .
+        docker push ghcr.io/${{ github.repository }}/Tugi-Macro-Layoffs:latest
