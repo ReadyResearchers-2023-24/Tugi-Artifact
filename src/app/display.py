@@ -2,8 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import statsmodels.api as sm
-import streamlit as st
-import pandas as pd
 from typing import Tuple
 
 
@@ -121,7 +119,6 @@ def display_var_model_results(fitted_model, results_df):
     # Equation-specific statistics (RMSE, R-squared, etc.)
     st.write("### Equation-specific statistics:")
     resid = fitted_model.resid
-    endog = fitted_model.endog
     sigma_u = fitted_model.sigma_u
 
     for i, eq_name in enumerate(fitted_model.model.endog_names):

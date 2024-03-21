@@ -1,10 +1,9 @@
 import streamlit as st
 from statsmodels.tsa.stattools import adfuller
 
-import streamlit as st
 
-from display import *
-from var import *
+from display import plot_irfs, display_data_tables, perform_regression_analysis, print_adf_result, display_var_model_results
+from var import load_data, prepare_raw_data, difference_variables, fit_var_model_and_select_lags
 
 # This function must be here because it contains the IRF
 
