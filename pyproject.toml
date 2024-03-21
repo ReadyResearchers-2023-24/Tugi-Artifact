@@ -4,10 +4,6 @@ version = "0.2.0"
 description = ""
 authors = ["tuduun <gantulga01@allegheny.edu>"]
 
-packages = [
-    { include = "app", from = "src" }
-]
-
 [tool.poetry.dependencies]
 python = "^3.10"
 pyqt5 = "=5.15.10"   
@@ -19,9 +15,6 @@ matplotlib = "*"
 statsmodels = "*"
 ruff = "*"
 
-
-
-[tool.poetry.dev-dependencies]
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.1.1"
