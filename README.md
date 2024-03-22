@@ -1,56 +1,87 @@
 # Tech Layoff Analysis Artifact 2023
 
-An in-depth analysis of the dynamics of tech layoffs in light of economic indicators/indicators.
+## Table of Contents
 
 
-Tuguldur Gantulga_
-Timothy P. Bianco, PhD_
-Gregory Kapfhammer, PhD_
+* [Outline](#outline)
+    * [Preface Introduction and Motivation](#preface-introduction-and-motivation)
+    * [Preface Data Section](#preface-data-section)
+    * [Preface Technical Details](#preface-technical-details)
+    * [Preface Experimental Results](#preface-experimental-results)
+    * [Preface Future Work](#preface-future-work)
+* [How to run the streamlit web application](#how-to-run-the-streamlit-web-application)
+    * [Go the official research website](#go-the-official-research-website)
+    * [Access it through poetry and virtual environment](#access-it-through-poetry-and-virtual-environment)
+    * [Access it from the DockerHub](#access-it-from-the-dockerhub)
+- [Conclusion](#conclusion)
 
-Fall 2023 - Spring 2024
+## Outline
 
-The Business and Economics Department_
-Department of Computer and Information Science_
-Allegheny College, Meadville, PA 16335_
+This comprehensive analysis explores the dynamics of technology sector layoffs within the context of broader economic indicators. Given the challenging nature of the job market in 2023, particularly in the technology industry, my goal was to uncover the key economic factors influencing the current employment landscape. To achieve this, I have crafted a sophisticated STATA code that not only runs on Stata to confirm my hypotheses but also encompasses a Python Vector Auto Regression Streamlit website, offering a deeper dive into the interplay between economic trends and tech layoffs.
 
+_Tuguldur Gantulga_
+_Timothy P. Bianco, PhD_
+_Gregory Kapfhammer, PhD_
 
-## Introduction and Motivation
+_Fall 2023 - Spring 2024_
 
-As the economy grapples with uncertainties, notably evident from the Economic Uncertainty Index and fluctuating federal funds rates, it's crucial to understand the underlying factors affecting tech layoffs. Through meticulous data analysis using Python, this project aims to unravel the correlations and potential causative factors. Harnessing the power of Streamlit, a web-based visualization tool, we aim to provide interactive insights that elucidate the patterns and trends in tech layoffs, offering stakeholders meaningful data to make informed decisions.
+_The Business and Economics Department_
+_Department of Computer and Information Science_
+_Allegheny College, Meadville, PA 16335_
 
-## Technical Details
+### Preface Introduction and Motivation
 
-- **Data Analysis**: Utilize Python for in-depth data analysis and trend extraction.
-- **Data Source**: Aggregate data from multiple sources, including `Layoffsfyi Tracker`, Economic Uncertainty Index, and Federal Funds Rate FROM FRED.
-- **Visualization**: Use Python's Streamlit library, a robust tool for web-based data visualization, to present the findings.
-- **End Product**: An interactive web application to provide people analysis of the tech layoff landscape.
+In 2023, with a staggering 263,180 software engineers laid off by 1,193 companies, as reported by Layoffs.fyi, I sought to uncover the economic factors driving this turmoil in the U.S. job market. To conduct a thorough economic analysis, I applied my computer science expertise. The hypotheses and macroeconomic variables I formulated are as follows:
 
-## Future Plans
+- H1: An increase in the Federal Funds Rate leads to an increase in layoffs.
+- H2: An increase in inflation leads to an increase in layoffs.
+- H3: An increase in industrial production leads to a decrease in layoffs.
+- H4: An increase in the Economic Uncertainty Index leads to an increase in layoffs.
 
-- **Enhanced Data Integration**: Integrate more granular data points, like company-specific financial health metrics, and increase my R-squared value.
-- **Modeling Improvements**: Explore advanced machine learning models to improve predictive capabilities concerning tech layoffs.
-- **User-Centric Design**: Refine the Streamlit web application's UI/UX to ensure user-friendliness and ease of navigation.
-- **Multimedia Integration**: Consider integrating video or animated presentations to explain complex findings more intuitively.
+### Preface Data Section
 
-## Related Work
+The dataset underpinning the Vector Autoregression (VAR) model in my study encompasses monthly data ranging from December 2000 to December 2023, forming the basis of a comprehensive time series analysis. Utilizing public macroeconomic datasets, such as the Federal Funds Rate, the U.S. Uncertainty Index, Industrial Production, the Number of Layoffs in the IT Sector, and Inflation, all sourced from the Federal Reserve Economic Data (FRED), I meticulously examined the intricate dynamics at play. In addition to these datasets, my research involved a detailed examination of basic trend data from Layoffs.fyi, which I analyzed using Tableau to gain further insights into the patterns and precipitants of tech sector layoffs.
 
-- **Tech Layoffs in Silicon Valley**: An analysis of the cyclic nature of tech layoffs in the heart of the tech industry.
-- **Economic Indicators and their Impact on the Tech World**: A deep dive into how broad economic metrics directly and indirectly influence tech startups and established companies.
-- **The Resilience of the Tech Industry in Economic Downturns**: Historical analysis of the tech industry's performance during past recessions.
-- **Venture Capital and its Role in Tech Stability**: Understanding how investments play a role in both the boom and bust of tech startups.
+### Preface Technical Details
 
-## How to run DEMO:
+I utilized these data to run my Vector Auto Regression (VAR) on Stata and to test my hypothesis, as mentioned above in the Introduction section, using my own VAR code written in Python. After developing my VAR scripts, I aimed to display my results through Streamlit and to plot the Impulse Response Function (IRF) graphs necessary for this research question. When working on the streamlit software side, I successfully integrated tools such as Docker, Statsmodels, Python, NumPy, Poetry, and functional practices to ensure my results and code were accurate.
 
+### Preface Experimental Results:
 
-#### To run the `tugi-artifact` app, first pull the image from Docker Hub:
+Based on my VAR results and the Impulse response functions from both Stata and my Python statsmodels VAR, they concluded that:
+
+They Proved:
+
+- H3: An increase in industrial production leads to a decrease in layoffs.
+- H4: An increase in the Economic Uncertainty Index leads to an increase in layoffs.
+
+They disproved and disgareed with:
+
+- H1: An increase in the Federal Funds Rate leads to an increase in layoffs.
+- H2: An increase in inflation leads to an increase in layoffs.
+
+### Preface Future Work
+
+In future work for this senior project, I aim to refine the macroeconomic variables impacting layoffs, acknowledging the complexity of accurately predicting layoffs due to factors such as company structure, business demand, organizational changes, and product specifications. The SBIC and HQIC results indicated that a 2-month lag is optimal for the Vector Autoregression (VAR) model, prompting plans to run the VAR with this lag and evaluate any deviations in the Impulse Response Function (IRF) results from those based on a 12-month lag. Additionally, I plan to explore various predictive models, including neural networks and machine learning algorithms, to assess their effectiveness in generating distinct IRF narratives
+
+## How to run the streamlit web application:
+
+### Go the official research website
+
+### Access it through poetry and virtual environment
+
+### Access it from the DockerHub:
+
+- To run the `tugi-artifact` app, first pull the image from Docker Hub:
 
 ```bash
 docker pull tuduun/tugi-artifact:v1.0.1
 ```
 
-#### After pulling the image, run the application by executing the following command:
+- After pulling the image, run the application by executing the following command:
 
 ```bash
 docker run -p 8501:8501 tuduun/tugi-artifact:v1.0.1
 ```
-### The application will be accessible at `http://localhost:8501` on your web browser.
+
+- The application will be accessible at `http://localhost:8501` on your web browser.
