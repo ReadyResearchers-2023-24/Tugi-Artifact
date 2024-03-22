@@ -6,7 +6,7 @@ from typing import Tuple
 
 
 
-def plot_irfs(irf, independent_var: str) -> None:
+def plot_irfs(irf, independent_var: str, description: str) -> None:
     """
     Plots impulse response functions (IRFs) showing the response of LAYOFFS to a shock in the specified independent variable.
 
@@ -17,6 +17,9 @@ def plot_irfs(irf, independent_var: str) -> None:
     Returns:
     None. The function directly renders the plot in a Streamlit application.
     """
+    st.write(" ")
+    st.write(f"**Graph for {independent_var}**")
+    st.write(description)
     fig = irf.plot(impulse=independent_var, response='LAYOFFS', orth=True, subplot_params={'title': f'Response of LAYOFFS to a shock in {independent_var}'})
     st.pyplot(fig)
 
