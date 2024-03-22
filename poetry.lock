@@ -1651,7 +1651,7 @@ files = [
 ]
 
 [package.dependencies]
-altair = ">=3.2.0"
+altair = ">=5.0.0"
 blinker = ">=1.0.0"
 cachetools = ">=4.0"
 click = ">=7.0"
