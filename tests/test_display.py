@@ -22,11 +22,11 @@ def test_plot_irfs():
     mock_irf.plot.return_value = mock_fig
     
     independent_var = 'GDP'
-    description = "This is a test description."
+
     # Patch the streamlit.pyplot function
     with patch('app.display.st.pyplot') as mock_pyplot:
         # Call the function with the mock IRF object and an independent variable
-        display.plot_irfs(mock_irf, independent_var, description)
+        display.plot_irfs(mock_irf, independent_var)
         
         # Assert the IRF plot method was called correctly
         mock_irf.plot.assert_called_once_with(impulse=independent_var, response='LAYOFFS', orth=True,
