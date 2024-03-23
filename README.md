@@ -66,6 +66,29 @@ In future work for this senior project, I aim to refine the macroeconomic variab
 
 ## How to run the streamlit web application:
 
+
+### Access it through Poetry!
+
+1. First go here and install Poetry
+
+```text
+https://python-poetry.org/docs/#installing-with-the-official-installer
+```
+
+2. Clone repository
+3. Go to root of the project
+4. Run these commands:
+```
+Poetry shell
+```
+```
+Poetry install
+```
+```
+Poetry run streamlit run src/app.main.py
+```
+5. The application will be accessible at `http://localhost:8501` on your web browser.
+
 ### Access it from the DockerHub:
 
 - First, go to Docker and Install Docker Desktop
