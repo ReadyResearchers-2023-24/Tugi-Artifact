@@ -66,10 +66,6 @@ In future work for this senior project, I aim to refine the macroeconomic variab
 
 ## How to run the streamlit web application:
 
-### Go the official research website
-
-### Access it through poetry and virtual environment
-
 ### Access it from the DockerHub:
 
 - To run the `tugi-artifact` app, first pull the image from Docker Hub:
