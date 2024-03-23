@@ -11,7 +11,7 @@
     * [Preface Future Work](#preface-future-work)
 * [How to run the streamlit web application](#how-to-run-the-streamlit-web-application)
     * [Go the official research website](#go-the-official-research-website)
-    * [Access it through poetry and virtual environment](#access-it-through-poetry-and-virtual-environment)
+    * [Access it through poetry!](#access-it-through-poetry!)
     * [Access it from the DockerHub](#access-it-from-the-dockerhub)
 - [Conclusion](#conclusion)
 
