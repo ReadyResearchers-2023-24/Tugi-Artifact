@@ -68,6 +68,8 @@ In future work for this senior project, I aim to refine the macroeconomic variab
 
 ### Access it from the DockerHub:
 
+- First, go to Docker and Install Docker Desktop
+
 - To run the `tugi-artifact` app, first pull the image from Docker Hub:
 
 ```bash
