@@ -79,13 +79,13 @@ https://python-poetry.org/docs/#installing-with-the-official-installer
 3. Go to root of the project
 4. Run these commands:
 ```
-Poetry shell
+poetry shell
 ```
 ```
-Poetry install
+poetry install
 ```
 ```
-Poetry run streamlit run src/app.main.py
+poetry run streamlit run src/app.main.py
 ```
 5. The application will be accessible at `http://localhost:8501` on your web browser.
 
