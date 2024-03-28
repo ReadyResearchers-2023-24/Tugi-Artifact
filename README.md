@@ -85,7 +85,7 @@ poetry shell
 poetry install
 ```
 ```
-poetry run streamlit run src/app.main.py
+poetry run streamlit run src/app/main.py
 ```
 5. The application will be accessible at `http://localhost:8501` on your web browser.
 
