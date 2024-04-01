@@ -50,12 +50,12 @@ I utilized these data to run my Vector Auto Regression (VAR) on Stata and to tes
 
 Based on my VAR results and the Impulse response functions from both Stata and my Python statsmodels VAR, they concluded that:
 
-They Proved:
+The research proved:
 
 - H3: An increase in industrial production leads to a decrease in layoffs.
 - H4: An increase in the Economic Uncertainty Index leads to an increase in layoffs.
 
-They disproved and disgareed with:
+The research disproved and disgareed with:
 
 - H1: An increase in the Federal Funds Rate leads to an increase in layoffs.
 - H2: An increase in inflation leads to an increase in layoffs.
@@ -67,7 +67,7 @@ In future work for this senior project, I aim to refine the macroeconomic variab
 ## How to run the streamlit web application:
 
 
-### Access it through Poetry!
+### Access the dashboard through Poetry!
 
 1. First go here and install Poetry
 
@@ -89,7 +89,7 @@ poetry run streamlit run src/app/main.py
 ```
 5. The application will be accessible at `http://localhost:8501` on your web browser.
 
-### Access it from the DockerHub:
+### Access the dashboard from the DockerHub:
 
 - First, go to Docker and Install Docker Desktop
 
